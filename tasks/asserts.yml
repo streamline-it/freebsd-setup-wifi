@@ -1,0 +1,15 @@
+- name: ensure variables are defined
+  ansible.builtin.assert:
+    that:
+      - freebsd_setup_wifi_wpa_config_filepath | length > 0 
+      - freebsd_setup_wifi_driver  | length > 0
+      - freebsd_setup_wifi_ssid | length > 0
+      - freebsd_setup_wifi_ssid_passphrase | length > 0
+      - freebsd_setup_wifi_ifconfig_line | length > 0
+    fail_msg: >
+      "Make sure the following variables are defined:
+      freebsd_setup_wifi_config_filepath,
+      freebsd_setup_wifi_wifi_driver,
+      freebsd_setup_wifi_ifconfig_line,
+      freebsd_setup_wifi_ssid,
+      freebsd_setup_wifi_ssid_passphrase"     

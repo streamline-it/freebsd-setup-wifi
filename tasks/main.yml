@@ -1,0 +1,34 @@
+---
+# tasks file for freebsd-setup-wifi
+
+- name: call tasks to check assertions
+  ansible.builtin.include_tasks: asserts.yml
+
+- name: ensure the /etc/wpa_supplicant.conf exists with new config
+  notify: 
+    - restart network
+    - restart routing
+  ansible.builtin.template:
+    src: wpa_supplicant.conf.j2
+    dest: "{{ freebsd_setup_wifi_wpa_config_filepath }}"
+    owner: root
+    group: wheel
+    mode: 0600
+
+- name: ensure the driver is specified in rc.conf
+  notify: 
+    - restart network
+    - restart routing
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: "wlans_{{ freebsd_setup_wifi_driver }}=\"wlan0\""
+    state: present
+
+- name: ensure the WiFi line exists for ifconfig
+  notify: 
+    - restart network
+    - restart routing
+  ansible.builtin.lineinfile:
+    path: /etc/rc.conf
+    line: 'ifconfig_wlan0="{{ freebsd_setup_wifi_ifconfig_line }}"'
+    state: present

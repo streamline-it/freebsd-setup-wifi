@@ -1,0 +1,19 @@
+---
+# defaults file for freebsd-setup-wifi
+
+# name of the wifi driver
+# Ex.
+# freebsd_setup_wifi_driver: rtwn0
+freebsd_setup_wifi_driver:
+
+# ifconfig line
+# Ex.
+# freebsd_setup_wifi_ifconfig_line: "WPA SYNCDHCP group main_wifi"
+freebsd_setup_wifi_ifconfig_line:
+
+# SSID of the Wifi Router
+freebsd_setup_wifi_ssid:
+
+# WiFi router's passphrase.  This should be secured by ansible-vault.
+freebsd_setup_wifi_ssid_passphrase:
+

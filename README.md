@@ -1,2 +1,27 @@
 # freebsd-setup-wifi
 Setup Wi-Fi on FreeBSD hosts
+
+# vars file for freebsd-setup-wifi
+
+# Filepath to the WPA config file
+freebsd_setup_wifi_wpa_config_filepath: /etc/wpa_supplicant.conf
+
+
+# defaults file for freebsd-setup-wifi
+
+# name of the wifi driver
+# Ex.
+# freebsd_setup_wifi_driver: rtwn0
+freebsd_setup_wifi_driver:
+
+# ifconfig line
+# Ex.
+# freebsd_setup_wifi_ifconfig_line: "WPA SYNCDHCP group main_wifi"
+freebsd_setup_wifi_ifconfig_line:
+
+# SSID of the Wifi Router
+freebsd_setup_wifi_ssid:
+
+# WiFi router's passphrase.  This should be secured by ansible-vault.
+freebsd_setup_wifi_ssid_passphrase:
+

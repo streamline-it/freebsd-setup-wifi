@@ -1,0 +1,6 @@
+---
+# vars file for freebsd-setup-wifi
+
+# Filepath to the WPA config file
+freebsd_setup_wifi_wpa_config_filepath: /etc/wpa_supplicant.conf
+

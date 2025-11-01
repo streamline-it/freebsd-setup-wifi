@@ -1,0 +1,13 @@
+---
+# handlers file for freebsd-setup-wifi
+
+- name: restart network
+  ansible.builtin.service:
+    name: netif
+    state: restarted
+
+- name: restart routing
+  ansible.builtin.service:
+    name: routing
+    state: restarted
+
