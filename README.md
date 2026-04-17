@@ -25,3 +25,7 @@ freebsd_setup_wifi_ssid:
 # WiFi router's passphrase.  This should be secured by ansible-vault.
 freebsd_setup_wifi_ssid_passphrase:
 
+
+# Example playbook
+
+
